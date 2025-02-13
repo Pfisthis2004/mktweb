@@ -1,0 +1,107 @@
+/* Giao diện giỏ hàng */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #222;
+    color: #fff;
+    background-image: url('https://i.pinimg.com/originals/e7/05/68/e70568bea5036384980fcf0fa18dfbc6.jpg'); /* Thay bằng đường dẫn đến ảnh */
+    background-repeat: no-repeat; /* Không lặp lại ảnh */
+    background-position: top right; /* Hiển thị ảnh ở góc trên bên phải */
+    background-size: 300px 545px; /* Kích thước ảnh (thay đổi tùy ý) */
+}
+
+.cart-page {
+    padding: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Canh giữa theo chiều dọc */
+    gap: 20px;
+}
+
+.cart-container {
+    display: flex;
+    gap: 20px;
+    width: 90%;
+    max-width: 1200px;
+}
+
+.cart-items {
+    flex: 2;
+    background: #333;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.order-summary {
+    flex: 1;
+    background: #333;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.cart-items h2, .order-summary h2 {
+    margin: 0 0 10px;
+    font-size: 1.5em;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    padding: 10px;
+    text-align: left;
+}
+
+table th {
+    background: #444;
+}
+
+table tr:nth-child(odd) td {
+    background: #3b3b3b;
+}
+
+table tr:nth-child(even) td {
+    background: #292929;
+}
+
+.continue-shopping {
+    background: #fff;
+    color: #222;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.order-summary .apply-btn, .order-summary .coupon-btn, .checkout-btn {
+    background: #673ab7;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    width: 100%;
+    margin: 10px 0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.order-summary input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+}
+
+.note {
+    font-size: 0.9em;
+    color: #bbb;
+}
+
+.note a {
+    color: #fff;
+    text-decoration: underline;
+}
+

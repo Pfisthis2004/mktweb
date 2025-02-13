@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Model Version</title>
+    <link rel="stylesheet" href="webmohinh.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel ="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+           <div class="anh"><img src="img/logo.png" alt=""></div>
+            <h1>3D Model Store</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#login" id="login-btn">Login</a>
+                        <li id="user-menu" style="display: none; position: relative;">
+                            <i class="fa-solid fa-user" id="user-icon" style="font-size: 24px; cursor: pointer;"></i>
+                            <div id="logout-menu" style="display: none; position: absolute; background: white; padding: 10px; border-radius: 5px; top: 30px; left: 0; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);">
+                                <a href="#" id="logout-btn" style="color: black; text-decoration: none;">Logout</a>
+                            </div>
+                        </li>
+                    </li>   
+                    <div id="cart-icon" onclick="redirectToCart()">
+                        <i class="fa fa-shopping-cart"></i>
+                        <span id="cart-count">0</span>
+                      </div>          
+                </ul>             
+            </nav>
+            <div class="search">
+                <div class="search-contain">
+                    <i class="fa-solid fa-magnifying-glass" id="search-icon"></i>
+                    <input type="text" class="form-control" id="search-input" placeholder="Tìm kiếm sản phẩm">
+                    <div id="search-results" class="search-results"></div>
+                </div>
+            </div>
+        </div>
+        <div id="login-modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h2>Login / Register</h2>
+                <input type="text" id="username" placeholder="Tên đăng nhập">
+                <input type="password" id="password" placeholder="Mật khẩu">
+                <button onclick="handleLogin()">Login</button>
+                <button onclick="handleRegister()">Register</button>
+            </div>
+        </div>
+    </header>
+
+    <section id="home">
+        <div class="container">
+            <h2>Welcome to 3D Model Version</h2>
+            <p>Dẫn đầu, đỉnh cao, danh vọng, Vươn mình sáng tạo, Mạnh mẽ khác biệt!</p>
+            <p>Đồng tiền đi đôi với chất lượng</p>
+        </div>
+    </section>
+
+
+  <!-- giảm giá form-->
+    <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="img01">
+        <div id="caption"></div>
+      </div>
+
+       <!-- Ds sản phẩm -->
+    <section id="products">
+        <div class="container-1">
+            <h2>Sản Phẩm</h2>          
+            <div class="product-slider">
+                <div class="product-grid">
+                    <div class="product" id="product-1">
+                        <img src="img/ảnh makerting/449654220_452387184169855_8289394655275574584_n.jpg" alt="Model 1"onclick="openModal(this)">
+                        <h3>Goku</h3>
+                        <p>250.000VND</p>
+                        <button class="add-to-cart">Thêm vào giỏ hàng</button>
+                    </div>
+                    <div class="product" id="product-2">
+                        <img src="img/ảnh makerting/il_1080xN.4711671899_fr5f.webp" alt="Model 2" onclick="openModal(this)">
+                        <h3>Thủy Long Watatsumi</h3>
+                        <p>5.000.000VND</p>
+                        <button class="add-to-cart">Thêm vào giỏ hàng</button>
+                    </div>
+                    <div class="product" id="product-3">
+                        <img src="img/ảnh makerting/463633111_524567286951844_2843045381641798126_n.jpg" alt="Model 3" onclick="openModal(this)">
+                        <h3>Malenia (Elden ring)</h3>
+                        <p>1.000.000VND</p>
+                        <button class="add-to-cart">Thêm vào giỏ hàng</button>
+                    </div>
+                    <div class="product" id="product-4">
+                        <img src="img/ảnh makerting/x3_1.png" alt="Model 4" onclick="openModal(this)">
+                        <h3>Facehugger</h3>
+                        <p>100.000VND</p>
+                        <button class="add-to-cart">Thêm vào giỏ hàng</button>
+                    </div>
+                    <!-- Thêm sản phẩm khác nếu cần -->
+                    <div class="product" id="product-5">
+                        <img src="img/ảnh makerting/Ảnh chụp màn hình 2025-01-08 231149.png" alt="Model 5" onclick="openModal(this)">
+                        <h3>Okarun - Dandandan - Chibi</h3>
+                        <p>100.000VND</p>
+                        <button class="add-to-cart">Thêm vào giỏ hàng</button>
+                    </div>
+                    <div class="product" id="product-6">
+                        <img src="img/ảnh makerting/Ảnh chụp màn hình 2025-01-08 230957.png" alt="Model 6" onclick="openModal(this)">
+                        <h3>Jinx - Arcane - Fullsize</h3>
+                        <p>100.000VND</p>
+                        <button class="add-to-cart">Thêm vào giỏ hàng</button>
+                    </div>
+                    <div class="product" id="product-7">
+                        <img src="img/ảnh makerting/Ảnh chụp màn hình 2025-01-08 230805.png" alt="Model 7" onclick="openModal(this)">
+                        <h3>Roxy Migurdia - Mushoku Tensei Anime</h3>
+                        <p>100.000VND</p>
+                        <button class="add-to-cart">Thêm vào giỏ hàng</button>
+                    </div>
+                    <div class="product" id="product-8">
+                        <img src="img/ảnh makerting/Ảnh chụp màn hình 2025-01-08 230635.png" alt="Model 8" onclick="openModal(this)">
+                        <h3>Lugia Pokemon Silver 3D</h3>
+                        <p>100.000VND</p>
+                        <button class="add-to-cart">Thêm vào giỏ hàng</button>
+                    </div>
+                    <div class="product" id="product-9">
+                        <img src="img/ảnh makerting/Ảnh chụp màn hình 2025-01-08 231616.png" alt="Model 9" onclick="openModal(this)">
+                        <h3>Ellen Joe - Zenless Zone Zero</h3>
+                        <p>100.000VND</p>
+                        <button class="add-to-cart">Thêm vào giỏ hàng</button>
+                    </div>
+                    <div class="product" id="product-10">
+                        <img src="img/ảnh makerting/Ảnh chụp màn hình 2025-01-08 231430.png" alt="Model 10" onclick="openModal(this)">
+                        <h3>Holo - Spice and Wolf Anime </h3>
+                        <p>100.000VND</p>
+                        <button class="add-to-cart">Thêm vào giỏ hàng</button>
+                    </div>
+                    <div class="product" id="product-11">
+                        <img src="img/ảnh makerting/Ảnh chụp màn hình 2025-01-08 232327.png" alt="Model 11" onclick="openModal(this)">
+                        <h3>DAN DA DAN - Turbo Granny Cat</h3>
+                        <p>100.000VND</p>
+                        <button class="add-to-cart">Thêm vào giỏ hàng</button>
+                    </div>
+                    <div class="product" id="product-12">
+                        <img src="img/ảnh makerting/Ảnh chụp màn hình 2025-01-08 230457.png" alt="Model 12" onclick="openModal(this)">
+                        <h3>Bowsette - mario</h3>
+                        <p>100.000VND</p>
+                        <button class="add-to-cart">Thêm vào giỏ hàng</button>
+                    </div>
+                </div>
+            </div>           
+        </div>
+    </section>
+    
+    <section id="contact">
+        <div class="container">
+            <h2>Liên Hệ Với Chúng Tôi</h2>
+            <form id="contactForm">
+                <input type="text" id="name" placeholder="Họ và Tên của bạn" required>
+                <input type="email" id="email" placeholder="Email của bạn" required>
+                <textarea id="message" placeholder="Nội dung tin nhắn" required></textarea>
+                <button type="submit">Gửi Tin Nhắn</button>
+            </form>
+            <p id="successMessage" style="display: none; color: green; margin-top: 10px;">
+                Tin nhắn của bạn đã được gửi thành công!
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-left">
+                <h3>Thông tin liên hệ</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Address: 58 Tố Hữu, Trung Văn, Nam Từ Liêm, Hà Nội</p>
+                <p><i class="fas fa-phone-alt"></i> Hotline: 0987.654.321</p>
+                <p><i class="fas fa-envelope"></i> Email: 3DMVTeam@ictu.vn</p>
+                <p><i class="fas fa-globe"></i> Website: <a href="http://webcake.io">http://webcake.io</a></p>
+            </div>
+            <div class="footer-right">
+                <h3>Chăm sóc khách hàng</h3>
+                <p><a href="#">Chính sách bảo mật</a></p>
+                <p><a href="#">Chính sách vận chuyển</a></p>
+                <p><a href="#">Chính sách bảo hành</a></p>
+                <div class="payment-icons">
+                    <img src="https://www.svgrepo.com/show/328144/visa.svg" alt="Visa">
+                    <img src="https://play-lh.googleusercontent.com/F8D0AbyMmiuwsTZYLaPsu_o40XGfQHgvRnq25lVSWupgHPpH3-TQ9soMrWwDJco3siI" alt="Mastercard">
+                    <img src="https://cdn.haitrieu.com/wp-content/uploads/2022/10/Logo-MoMo-Square-1024x1024.png" alt="Verified">
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 3D Model Store. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+    <div class="notification">
+        <button id="showPopup">Get 10% OFF
+            <i class="fa-solid fa-envelope"></i>
+        </button>
+        
+    </div>
+
+
+    
+
+    <!-- Popup form -->
+    <div id="popupForm" class="popup hidden">
+        <div class="popup-content">
+            <span class="close-btn">&times;</span>
+            <h2>GIẢM GIÁ 10% cho 50 đơn hàng đầu tiên!!!</h2>
+            <img src="img/anhgiamgia.png" alt="" class="promo-image">
+            <p>Hãy là người đầu tiên tìm hiểu về các bản cập nhật, chiến dịch, chương trình khuyến mãi mới nhất của chúng tôi!!!</p>
+            <form>
+                <input type="email" placeholder="Enter your email address" required>
+                <button type="submit">Subscribe</button>
+            </form>
+            <p class="terms">*Terms and conditions apply.</p>
+        </div>
+    </div>
+
+    <script src="webmohinh.js"></script>
+
+</body>
+</html>
