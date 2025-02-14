@@ -4,7 +4,6 @@ body {
     font-family: Arial, sans-serif;
     background-color: #222;
     color: #fff;
-    background-image: url('https://i.pinimg.com/originals/e7/05/68/e70568bea5036384980fcf0fa18dfbc6.jpg'); /* Thay bằng đường dẫn đến ảnh */
     background-repeat: no-repeat; /* Không lặp lại ảnh */
     background-position: top right; /* Hiển thị ảnh ở góc trên bên phải */
     background-size: 300px 545px; /* Kích thước ảnh (thay đổi tùy ý) */
