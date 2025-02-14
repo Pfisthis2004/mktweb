@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shopping Cart</title>
+    <title>Giỏ hàng</title>
     <link rel="stylesheet" href="cart.css"> <!-- Liên kết file CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -13,15 +13,15 @@
     <main class="cart-page">
         <div class="cart-container">
             <div class="cart-items">
-                <h2>Shopping Cart</h2>
-                <p>You have <span id="cart-items-count">0</span> items in your shopping cart.</p>
-                <button class="continue-shopping" onclick="window.location.href='index.html'">&lt; Continue Shopping</button>
+                <h2>Giỏ hàng</h2>
+                <p>Bạn có <span id="cart-items-count">0</span> Sản phẩm trong giỏ hàng của bạn.</p>
+                <button class="continue-shopping" onclick="window.location.href='index.html'">&lt; Tiếp tục mua sắm</button>
                 <table>
                     <thead>
                         <tr>
-                            <th>Item</th>
-                            <th>Variant Name</th>
-                            <th>Price</th>
+                            <th>Sản phẩm</th>
+                            <th>Tên sản phẩm</th>
+                            <th>Giá</th>
                             <th></th>
                         </tr>
                     </thead>
@@ -29,28 +29,28 @@
                 </table>
             </div>
             <div class="order-summary">
-                <h2>Order Summary</h2>
-                <label for="promo-code">Promo Code</label>
+                <h2>Tóm tắt đơn hàng</h2>
+                <label for="promo-code">Mã giảm giá</label>
                 <input type="text" id="promo-code" placeholder="Enter or choose a promo code">
-                <button class="apply-btn">Apply</button>
+                <button class="apply-btn">Thanh toán</button>
                 <hr>
                 <div class="totals">
                     <div>
-                        <span>Subtotal</span>
+                        <span>Tổng</span>
                         <span id="subtotal">$0.00</span>
                     </div>
                     <div>
-                        <span>Total Discount</span>
+                        <span>Tổng giảm giá</span>
                         <span id="total-discount">$0.00</span>
                     </div>
                     <div>
-                        <span><strong>Total Price</strong></span>
+                        <span><strong>Tổng tiền</strong></span>
                         <span id="total-price"><strong>$0.00</strong></span>
                     </div>
                 </div>
                 <button class="checkout-btn">Checkout with Stripe</button>
                 <p class="note">
-                    Please note that purchased files are non-refundable. Refer to the <a href="#">Terms</a>.
+                    Xin lưu ý rằng các tệp đã mua không được hoàn lại. Tham khảo <a href="#">Terms</a>.
                 </p>
             </div>
         </div>
